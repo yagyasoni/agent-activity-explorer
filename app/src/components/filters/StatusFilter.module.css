@@ -1,0 +1,81 @@
+.group {
+  display: inline-flex;
+  height: 32px;
+  padding: 2px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  gap: 2px;
+}
+
+.legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition:
+    background var(--duration) var(--ease),
+    color var(--duration) var(--ease);
+}
+
+.option:hover .label {
+  color: var(--text);
+}
+
+.input:checked + .label {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.input:focus-visible + .label {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.option[data-status='ok'] .dot {
+  background: var(--ok);
+}
+
+.option[data-status='blocked'] .dot {
+  background: var(--blocked);
+}
+
+.option[data-status='error'] .dot {
+  background: var(--error);
+}

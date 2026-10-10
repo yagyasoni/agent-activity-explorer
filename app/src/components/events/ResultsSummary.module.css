@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.text[data-stale='true'] {
+  opacity: 0.5;
+}
+
+.sep {
+  margin: 0 6px;
+  color: var(--text-faint);
+}

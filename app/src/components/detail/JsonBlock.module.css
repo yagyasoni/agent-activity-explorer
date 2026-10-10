@@ -1,0 +1,16 @@
+.pre {
+  max-height: 360px;
+  overflow: auto;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.pre:focus-visible {
+  outline-offset: -2px;
+}

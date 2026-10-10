@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-subtle);
+  font-size: var(--text-xs);
+}
+
+.none {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
