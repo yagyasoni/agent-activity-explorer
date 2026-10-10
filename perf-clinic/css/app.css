@@ -50,10 +50,11 @@ body {
   padding: 12px 32px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, padding 0.2s;
 }
 
 .topbar-raised {
+  padding-block: 6px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
@@ -98,6 +99,7 @@ main {
 .hero-image {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .hero-copy {
@@ -169,10 +171,12 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 16px;
-  align-items: start;
 }
 
 .agent-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -181,6 +185,7 @@ main {
 
 .agent-avatar {
   width: 48px;
+  height: 48px;
   border-radius: 12px;
 }
 
@@ -201,7 +206,7 @@ main {
 }
 
 .agent-count {
-  margin: 0;
+  margin: auto 0 0;
   color: var(--accent);
   font-size: 13px;
 }
@@ -316,6 +321,7 @@ main {
   right: 24px;
   z-index: 15;
   width: 340px;
+  max-height: calc(100vh - 120px);
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
