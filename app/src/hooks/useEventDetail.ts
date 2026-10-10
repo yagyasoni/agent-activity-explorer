@@ -20,7 +20,9 @@ export function useEventDetail(id: string | null): EventDetailState {
     const slowTimer = setTimeout(() => setSlowKey(key), SLOW_AFTER_MS)
 
     fetchEvent(id, controller.signal)
-      .then((event) => setResult({ key, event }))
+      .then((event) => {
+        if (!controller.signal.aborted) setResult({ key, event })
+      })
       .catch((err) => {
         if (controller.signal.aborted) return
         const error = isNotFound(err)

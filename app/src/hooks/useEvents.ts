@@ -22,7 +22,9 @@ export function useEvents(filters: EventFilters): EventListState {
     const slowTimer = setTimeout(() => setSlowKey(key), SLOW_AFTER_MS)
 
     fetchEvents(filters, { signal: controller.signal })
-      .then((page) => setResult({ key, page }))
+      .then((page) => {
+        if (!controller.signal.aborted) setResult({ key, page })
+      })
       .catch((err) => {
         if (!controller.signal.aborted) setResult({ key, error: toError(err) })
       })

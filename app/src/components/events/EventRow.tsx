@@ -15,6 +15,11 @@ export function EventRow({ event, selected, onSelect }: EventRowProps) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       onSelect(event.id)
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      const row = e.currentTarget
+      const next = e.key === 'ArrowDown' ? row.nextElementSibling : row.previousElementSibling
+      if (next instanceof HTMLElement) next.focus()
     }
   }
 
