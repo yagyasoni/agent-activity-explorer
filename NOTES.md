@@ -6,16 +6,24 @@ I chose Vite because this app has no server side. Everything happens in the brow
 
 ## What I built
 
-[Core items done, which Polish / Stretch items you picked and why]
+All four Core items are done.
+
+From Polish I did all five. They were small to add on top of the base, and they are the things I notice first as a user: arrow keys and Enter in the list, a drawer layout on tablet, focus moving into the panel and back out, dark mode from the system setting, and no animation when reduced motion is on.
+
+From Stretch I picked tests only. The URL sync, load more and error paths are the parts most likely to break, so the tests cover those. One thing done properly felt better than a half-done chart or live mode.
 
 ## Tradeoffs and what I'd do differently
 
-[e.g. load-more button vs infinite scroll, axios vs fetch, no router, what you'd add with more time]
+- Load more button instead of infinite scroll. Simpler, and the user decides when the list grows.
+- Search fires on every keystroke and cancels the previous request. That is fine against the mock API. For a real one I would add a short debounce.
+- No router library. The URL state is about forty lines by hand, which is enough for one view.
+- Axios instead of fetch, mainly for the query serialisation and cancellation.
+- With more time: the histogram chart with a drag-to-select range, then a hand-built virtualized list.
 
 ## Known issues
 
-[anything broken or incomplete]
+No issues as such.
 
 ## How I used AI tools
 
-I used Claude Code in VS Code for the UI component structure and a first draft of this file. The API client, URL sync for filters and the detail panel, pagination and the loading / error / slow-network handling I wrote myself.
+I used Claude Code in VS Code for three things: the basic UI structure (folder layout and component skeleton), fixing ESLint errors, and working through a few errors I was stuck on. The data layer, URL sync, pagination, loading and error states, and the tests are my own.
